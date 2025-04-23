@@ -19,9 +19,9 @@
     $btn.addEventListener('click',  () => {console.log('클릭했네?')});
 
     // 참조가 동일한 이벤트 핸들러 함수를 중복해서 등록하더라도 하나의 핸들러만 등록된다.
-    const handlerMousover = () => console.log('button mouseover!!!');
-    $btn.addEventListener('mouseover', handlerMousover);
-    $btn.addEventListener('mouseover', handlerMousover);
+    const handlerMouseover = () => console.log('button mouseover!!!');
+    $btn.addEventListener('mouseover', handlerMouseover);
+    $btn.addEventListener('mouseover', handlerMouseover);
   </script>
 </body>
 </html>
