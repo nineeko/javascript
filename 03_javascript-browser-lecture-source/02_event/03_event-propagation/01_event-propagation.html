@@ -33,8 +33,25 @@
         addEventListener 매서드 방식으로 등록한 이벤트 핸들러는 3번째 인수로 true를 전달하면
         캡처링 단계의 이벤트도 캐치할 수 있다.
     </p>
+    <ul id="food">
+        <li>김치찌개</li>
+        <li>된장찌개</li>
+        <li>고등어구이</li>
+    </ul>
     <script>
-
+        const $food = document.querySelector('#food');
+        $food.addEventListener('click', e => {
+            console.log('캡처링 단계');
+            console.log(e.eventPhase);  // 이벤트 전파 단계
+            console.log(e.target);  // 실제 클릭된 대상
+            console.log(e.currentTarget);   // 이벤트가 바인딩된 대상
+        }, true);
+        $food.addEventListener('click', e => {
+            console.log('타깃 or 버블링 단계');
+            console.log(e.eventPhase);  // 이벤트 전파 단계
+            console.log(e.target);  // 실제 클릭된 대상
+            console.log(e.currentTarget);   // 이벤트가 바인딩된 대상
+        });
     </script>
 </body>
 </html>
